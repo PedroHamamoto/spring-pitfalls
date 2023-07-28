@@ -6,21 +6,18 @@ import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 
 @Service
-class PokemonServiceV1(
+class PokemonServiceV2(
     val pokeApiClient: PokeApiClient
 ) {
     private val logger = KotlinLogging.logger {}
 
+    @Cacheable("pokemons-v2")
     fun findByName(name: String) =
-        getByName(name)
-
-    @Cacheable("pokemons-v1")
-    private fun getByName(name: String) =
         pokeApiClient.getByName(name).let {
             Pokemon(
                 id = it.id,
                 name = it.name,
                 abilities = it.moves.map { moveWrapper -> moveWrapper.move.name }
-            ).also { logger.info { "[V1] Found pokemon $it" } }
+            ).also { logger.info { "[V2] Found pokemon $it" } }
         }
 }
