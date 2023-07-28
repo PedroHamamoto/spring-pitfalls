@@ -1,11 +1,11 @@
-package br.com.hamamoto.spring_traps
+package br.com.hamamoto.spring_pitfalls
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class SpringTrapsApplication
+class SpringPitfallsApplication
 
 fun main(args: Array<String>) {
-	runApplication<SpringTrapsApplication>(*args)
+	runApplication<SpringPitfallsApplication>(*args)
 }

@@ -1,1 +1,1 @@
-rootProject.name = "spring-traps"
+rootProject.name = "spring-pitfalls"
