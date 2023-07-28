@@ -1,19 +1,17 @@
 package br.com.hamamoto.spring_pitfalls.pokemon.view
 
-import br.com.hamamoto.spring_pitfalls.pokemon.domain.PokemonService
+import br.com.hamamoto.spring_pitfalls.pokemon.domain.PokemonServiceV1
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("pokemons")
 class PokemonController(
-    val pokemonService: PokemonService
+    val pokemonServiceV1: PokemonServiceV1
 ) {
 
-    @GetMapping("/{name}/abilities")
+    @GetMapping("/v1/pokemons/{name}/abilities")
     fun getAbilitiesByName(@PathVariable("name") name: String) =
-        pokemonService.findByName(name)
+        pokemonServiceV1.findByName(name)
 
 }

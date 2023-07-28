@@ -2,7 +2,8 @@ package br.com.hamamoto.spring_pitfalls.pokemon.client
 
 data class PokemonApiResponse(
     val name: String,
-    val moves: List<MoveWrapper>
+    val moves: List<MoveWrapper>,
+    val id: Int
 )
 
 data class MoveWrapper(
