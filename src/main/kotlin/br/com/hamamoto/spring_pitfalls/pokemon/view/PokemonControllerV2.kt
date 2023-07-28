@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/v2/pokemons/")
+@RequestMapping("/v2/pokemons")
 class PokemonControllerV2(
     val pokemonServiceV2: PokemonServiceV2
 ) {
 
-    @GetMapping("{name}/abilities")
+    @GetMapping("/{name}")
     fun getAbilitiesByNameV(@PathVariable("name") name: String) =
         pokemonServiceV2.findByName(name)
 

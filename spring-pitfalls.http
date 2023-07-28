@@ -1,0 +1,8 @@
+#### Variables
+@pokemon-api-url = http://localhost:8080
+
+#### [V1] Get abilities by name
+GET {{pokemon-api-url}}/v1/pokemons/voltorb
+
+### [V2] Get abilities by name
+GET {{pokemon-api-url}}/v2/pokemons/voltorb
