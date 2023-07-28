@@ -15,7 +15,7 @@ class PokemonServiceV1(
         getByName(name)
 
     @Cacheable("pokemons-v1")
-    private fun getByName(name: String) =
+    fun getByName(name: String) =
         pokeApiClient.getByName(name).let {
             Pokemon(
                 id = it.id,

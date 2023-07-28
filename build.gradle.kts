@@ -28,7 +28,9 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign:4.0.3")
 	implementation("io.github.microutils:kotlin-logging-jvm:2.1.20")
 	runtimeOnly("com.h2database:h2")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	implementation("org.springframework.cloud:spring-cloud-contract-wiremock:4.0.3")
 }
 
 tasks.withType<KotlinCompile> {
