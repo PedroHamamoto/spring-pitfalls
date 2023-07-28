@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable
 interface PokeApiClient {
 
     @GetMapping("/api/v2/pokemon/{name}")
-    fun getByName(@PathVariable("name") name: String): Map<String, Any?>
+    fun getByName(@PathVariable("name") name: String): PokemonApiResponse
 
 }
