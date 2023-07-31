@@ -10,16 +10,15 @@ class TrainerService(
     private val trainerRepository: TrainerRepository
 ) {
 
-    fun create(trainer: Trainer): Trainer {
-        val persistedTrainer = save(trainer)
-        doSomething()
-
-        return persistedTrainer
-    }
+    fun create(trainer: Trainer): Trainer =
+        save(trainer)
 
     @Transactional
-    private fun save(trainer: Trainer) =
-        trainerRepository.save(trainer)
+    private fun save(trainer: Trainer): Trainer {
+        val persistedTrainer = trainerRepository.save(trainer)
+        doSomething()
+        return persistedTrainer
+    }
 
     private fun doSomething() {
         throw RuntimeException("Unknown error")
