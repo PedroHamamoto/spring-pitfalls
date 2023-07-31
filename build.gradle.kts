@@ -1,8 +1,10 @@
+import org.flywaydb.gradle.task.FlywayMigrateTask
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	id("org.springframework.boot") version "3.1.2"
 	id("io.spring.dependency-management") version "1.1.2"
+	id("org.flywaydb.flyway") version "9.19.4"
 	kotlin("jvm") version "1.8.22"
 	kotlin("plugin.spring") version "1.8.22"
 	kotlin("plugin.jpa") version "1.8.22"
@@ -34,6 +36,7 @@ dependencies {
 	testRuntimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.cloud:spring-cloud-contract-wiremock:4.0.3")
+	testImplementation("org.flywaydb:flyway-core:9.19.4")
 }
 
 tasks.withType<KotlinCompile> {
@@ -45,4 +48,9 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.register<FlywayMigrateTask>("migrateLocal") {
+	configFiles = arrayOf("config/flyway-local.config")
+	locations = arrayOf("filesystem:./src/main/resources/db/migration")
 }
