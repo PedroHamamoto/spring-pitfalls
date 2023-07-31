@@ -1,8 +1,22 @@
 #### Variables
-@pokemon-api-url = http://localhost:8080
+@spring-pitfalls-url = http://localhost:8080
 
-#### [V1] Get abilities by name
-GET {{pokemon-api-url}}/v1/pokemons/voltorb
+## Pokemon
 
-### [V2] Get abilities by name
-GET {{pokemon-api-url}}/v2/pokemons/voltorb
+#### [V1] Get pokemon by name
+GET {{spring-pitfalls-url}}/v1/pokemons/voltorb
+
+### [V2] Get pokemon by name
+GET {{spring-pitfalls-url}}/v2/pokemons/voltorb
+
+### [V1] Create trainer
+POST {{spring-pitfalls-url}}/v1/trainers
+Content-Type: application/json
+
+{
+    "name": "Green"
+}
+
+## States
+###  Get state by uf
+GET {{spring-pitfalls-url}}/v1/states/al
