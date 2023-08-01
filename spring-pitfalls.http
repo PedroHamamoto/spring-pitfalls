@@ -1,14 +1,14 @@
 #### Variables
 @spring-pitfalls-url = http://localhost:8080
 
-## Pokemon
-
+## Pokemons
 #### [V1] Get pokemon by name
 GET {{spring-pitfalls-url}}/v1/pokemons/voltorb
 
 ### [V2] Get pokemon by name
 GET {{spring-pitfalls-url}}/v2/pokemons/voltorb
 
+## Trainers
 ### [V1] Create trainer
 POST {{spring-pitfalls-url}}/v1/trainers
 Content-Type: application/json
