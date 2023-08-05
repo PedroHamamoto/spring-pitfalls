@@ -1,7 +1,6 @@
 package br.com.hamamoto.spring_pitfalls.trainer.domain
 
 import br.com.hamamoto.spring_pitfalls.trainer.data.TrainerRepository
-import java.lang.RuntimeException
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
